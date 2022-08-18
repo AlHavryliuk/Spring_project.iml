@@ -1,6 +1,6 @@
 body {
     height: 87%;
-    font-family: Verdana, G, sans-serif;
+    font-family: Georgia, serif;
     font-size: 15px;
     font-style: normal;
     font-weight: normal;
@@ -9,7 +9,7 @@ body {
 }
 
 
-table {
+table { 
     margin: auto;
     border-collapse: separate;
     box-sizing: border-box;
@@ -41,8 +41,9 @@ tr:hover td {
 }
 
 footer {
+
     background-color: #d4d4d4;
-    text-align: center;
+    font-size: 15px;
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -53,6 +54,7 @@ footer {
     width: 295%;
 }
 #table_add {
+
     margin: auto;
     border-collapse: collapse;
     box-sizing: border-box;
@@ -69,6 +71,103 @@ footer {
     font-variant: normal;
 }
 #form_marg {
+    margin-left: 15px;
     margin-top: 3%;
+    font-size: 25px;
 }
+.form_search_left {
+    width: 100%;
+    text-align: right;
+}
+.text_form_search {
+   font-size: 30px;
+    margin-top: 2%
+}
+.form_search_main {
+    display: flex;
+    width: 800px;
+    margin: 0 auto -10px auto;
+    padding-left: 5%;
+
+}
+.form_search_one {
+
+    width: 100%;
+    display: flex;
+    padding-right: 100px;
+    flex-wrap: wrap;
+    position: center;
+
+}
+.form_two {
+    width: 50%;
+}
+.form_search_left {
+    width: 100%;
+    text-align: right;
+}
+.form_search_right {
+    margin-left: 15px;
+    width: 100%;
+    text-align: right;
+}
+.arrow_righ {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+#person_table {
+    width: 750px;
+    font-size: 17px;
+    text-align: center;
+}
+
+#myInput {
+    width: 750px; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+.main_button {
+    font-size: 16px;
+    color: black;
+}
+.custom_addTable {
+    width: 500px;
+    margin: 50px auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background: none 0 0 / auto repeat scroll padding-box border-box rgb(222,230,250);
+    border-radius: 25px;
+}
+.custom_editTable {
+    width: 500px;
+    margin: 50px auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background: none 0 0 / auto repeat scroll padding-box border-box rgb(250, 162, 162);
+    border-radius: 25px;
+}
+.custom_back {
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+.custom_input {
+    width: 252px;
+    margin-left: -92px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    border: 2px solid cadetblue;
+}
+.custom_input:hover {
+    background-color: lavender;
+}
+
+.non:hover td {
+    background: none!important;
+}
+
+
+
 

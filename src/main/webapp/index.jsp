@@ -15,13 +15,14 @@
     <div><h1 id="form_marg">Application menu:</h1>
     <ol>
         <a style="font-size: 20px" href = "/spring/students/viewAllStudents">Students info:</a> </p>
-        <a style="font-size: 20px" href = "/spring/teachers/viewAllTeachers">Teacher info:</a>
+        <a style="font-size: 20px" href = "/spring/teachers/viewAllTeachers">Teacher info:</a>  </p>
+        <a style="font-size: 20px" href = "/spring/search/searchPerson">Search student:</a>
     </ol>
     </div>
-    <footer>
-        <p></p><p> Netcracker Project </p> <p> © 2022 Havryliuk Aleksandr </p>
 
-    </footer>
 </body>
+<footer>
+    <p></p><p> NetCracker Project </p> <p> © 2022 Havryliuk Aleksandr </p>
 
+</footer>
 </html>

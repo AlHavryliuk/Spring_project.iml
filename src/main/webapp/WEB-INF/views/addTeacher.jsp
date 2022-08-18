@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib  uri="http://www.springframework.org/tags/form" prefix ="form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <html>
 <head>
@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/myStyle.css"/>
 </head>
 <body>
+<div class="custom_addTable">
     <h1 id="form_marg">Add Teacher info:</h1>
     <form:form action="/spring/teachers/saveTeacher" method="POST">
-        <div>
         <table id="table_add">
             <tr>
                 <td>Enter name</td>
@@ -30,16 +30,18 @@
                 <td>Enter grade</td>
                 <td><form:input path="grade"/></td>
             </tr>
-            <tr>
-
-                <td><input id="input1" type="submit" value="Save teacher" /></td>
+            <tr class="non">
                 <td></td>
+                <td><input class="custom_input" type="submit" value="Save teacher"/></td>
             </tr>
-        </table></div>
-        <div> </p> <a href="/spring/teachers/viewAllTeachers"> Back </a> </div>
+        </table>
     </form:form>
-    <footer>
-        <p></p><p> Netcracker Project </p> <p> © 2022 Havryliuk Aleksandr </p>
-    </footer>
+    <div class="custom_back"> </p> <a class="main_button" href="/spring/teachers/viewAllTeachers"> Back </a></div>
+</div>
 </body>
+<footer style="background-color: lavender;">
+    <p></p>
+    <p> NetCracker Project </p>
+    <p> © 2022 Havryliuk Aleksandr </p>
+</footer>
 </html>

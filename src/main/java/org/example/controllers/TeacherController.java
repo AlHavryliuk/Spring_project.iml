@@ -2,9 +2,7 @@ package org.example.controllers;
 
 
 import org.example.dao.TeacherDAO;
-import org.example.entities.Student;
 import org.example.entities.Teacher;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;

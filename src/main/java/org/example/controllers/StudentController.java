@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping(value = "/students")
 public class StudentController {
 
-    private final StudentsDAO studentsDAO;
+    public StudentsDAO studentsDAO;
     private List <Student> studentList;
 
     public StudentController(StudentsDAO studentsDAO) {
@@ -31,6 +31,7 @@ public class StudentController {
         studentList = studentsDAO.getAllStudents();
         return new ModelAndView("redirect:/students/viewAllStudents");
     }
+
 
     @RequestMapping(value = "/editStudent/{id}", method = RequestMethod.GET)
     public ModelAndView editStudent (@ModelAttribute Student student, @PathVariable("id") int id) {
