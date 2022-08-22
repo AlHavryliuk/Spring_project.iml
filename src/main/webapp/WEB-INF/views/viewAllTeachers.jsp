@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<c:url value="/styles/myStyle.css" />">
     <script>
         function searchSubject () {
+
             // Declare variables
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("myInput");
@@ -41,7 +42,7 @@
 </head>
 <body>
 <h2 id="form_marg">Teachers info</h2>
-<input type="text" id="myInput" onkeyup="searchSubject()" placeholder="Search for subject..">
+<label for="myInput"></label><input type="text" id="myInput" onkeyup="searchSubject()" placeholder="Search for subject..">
 <table id="person_table" border="1" cellpadding="10" cellspacing="10">
     <tr>
         <th>Id</th>
@@ -65,8 +66,7 @@
 <a class="main_button" href="/spring/"> Back </a>
 </body>
 <footer>
-    <p></p>
-    <p> NetCracker Project </p>
-    <p> © 2022 Havryliuk Aleksandr </p>
+    <p class="footer_text"> NetCracker Project </p>
+    <p class="footer_text"> © 2022 Havryliuk Aleksandr </p>
 </footer>
 </html>

@@ -4,6 +4,7 @@ package org.example.controllers;
 import org.example.dao.TeacherDAO;
 import org.example.entities.Teacher;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +31,11 @@ public class TeacherController {
     }
 
     @RequestMapping(value = "/saveTeacher", method = RequestMethod.POST)
-    public ModelAndView saveTeacher (@ModelAttribute Teacher teacher) {
+    public ModelAndView saveTeacher (@ModelAttribute Teacher teacher, BindingResult bindingResult) {
+        if (bindingResult.hasErrors() | teacher.getSubject().isEmpty() | teacher.getGrade().isEmpty()
+                | teacher.getName().isEmpty()) {
+            return new ModelAndView("redirect:/error/errorPage");
+        }
         teacherDAO.insertTeacher(teacher);
         teacherList = teacherDAO.getAllTeachers();
         return new ModelAndView("redirect:/teachers/viewAllTeachers");
@@ -51,7 +56,11 @@ public class TeacherController {
         return new ModelAndView("editTeacher","command", new Teacher (teacher.getId(),teacher.getName(),teacher.getSubject(), teacher.getGrade()));
     }
     @RequestMapping(value = "/saveEditTeacher", method = RequestMethod.POST)
-    public ModelAndView saveEditTeacher (@ModelAttribute Teacher teacher) {
+    public ModelAndView saveEditTeacher (@ModelAttribute Teacher teacher, BindingResult bindingResult) {
+        if (bindingResult.hasErrors() | teacher.getSubject().isEmpty() | teacher.getGrade().isEmpty()
+                | teacher.getName().isEmpty()) {
+            return new ModelAndView("redirect:/error/errorPage");
+        }
         for (int i = 0; i < teacherList.size(); i++) {
             if (teacherList.get(i).getId() == teacher.getId()) {
                 teacherList.get(i).setName(teacher.getName());

@@ -4,7 +4,6 @@ package org.example.controllers;
 import org.example.dao.StudentsDAO;
 import org.example.entities.Student;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,19 +37,29 @@ public class SearchController {
     }
 
     @RequestMapping(value = "/saveSearchPersonId", method = RequestMethod.POST)
-    public ModelAndView saveSearchPersonId(@RequestParam int id) {
-        List<Student> temp = studentsDAO.getAllStudents();
-        searchList.clear();
-        for (Student student : temp) {
-            if (student.getId() == id) {
-                searchList.add(student);
+    public ModelAndView saveSearchPersonId(@RequestParam String id) {
+        try {
+            int parseId = Integer.parseInt(id);
+            if (parseId > 0) {
+                List<Student> temp = studentsDAO.getAllStudents();
+                searchList.clear();
+                for (Student student : temp) {
+                    if (student.getId() == parseId) {
+                        searchList.add(student);
+                    }
+                }
             }
+        } catch (NumberFormatException ex) {
+            return new ModelAndView("redirect:/error/errorPage");
         }
         return new ModelAndView("redirect:/search/searchPerson");
     }
 
     @RequestMapping(value = "/saveSearchPersonName", method = RequestMethod.POST)
     public ModelAndView saveSearchPerson(@RequestParam String username) {
+        if (username.isEmpty()) {
+            return new ModelAndView("redirect:/error/errorPage");
+        }
         List<Student> temp = studentsDAO.getAllStudents();
         searchList.clear();
         for (Student student : temp) {
@@ -62,20 +71,29 @@ public class SearchController {
     }
 
     @RequestMapping(value = "/saveSearchPersonAge", method = RequestMethod.POST)
-    public ModelAndView saveSearchPersonAge(@RequestParam int age) {
-        List<Student> temp = studentsDAO.getAllStudents();
-        searchList.clear();
-        for (Student student : temp) {
-            if (student.getAge() == age) {
-                searchList.add(student);
+    public ModelAndView saveSearchPersonAge(@RequestParam String age) {
+        try {
+            int parseAge = Integer.parseInt(age);
+            if (parseAge > 0) {
+                List<Student> temp = studentsDAO.getAllStudents();
+                searchList.clear();
+                for (Student student : temp) {
+                    if (student.getAge() == parseAge) {
+                        searchList.add(student);
+                    }
+                }
             }
+        } catch (NumberFormatException e) {
+            return new ModelAndView("redirect:/error/errorPage");
         }
-
         return new ModelAndView("redirect:/search/searchPerson");
     }
 
     @RequestMapping(value = "/saveSearchPersonGroup", method = RequestMethod.POST)
     public ModelAndView saveSearchPersonGroup(@RequestParam String group) {
+        if (group.isEmpty()) {
+            return new ModelAndView("redirect:/error/errorPage");
+        }
         List<Student> temp = studentsDAO.getAllStudents();
         searchList.clear();
         for (Student student : temp) {

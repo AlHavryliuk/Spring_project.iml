@@ -44,8 +44,7 @@
 </div>
 </body>
 <footer style="background-color: #faa2a2;">
-    <p></p>
-    <p> NetCracker Project </p>
-    <p> © 2022 Havryliuk Aleksandr </p>
+    <p class="footer_text"> NetCracker Project </p>
+    <p class="footer_text"> © 2022 Havryliuk Aleksandr </p>
 </footer>
 </html>

@@ -9,7 +9,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Search info:</title>
     <script>
@@ -88,12 +88,9 @@
 <div style="margin-top: 1%">
     <a class="main_button" href="/spring/"> Back </a>
 </div>
-
 </body>
-
 <footer>
-    <p></p>
-    <p> NetCracker Project </p>
-    <p> © 2022 Havryliuk Aleksandr </p>
+    <p class="footer_text"> NetCracker Project </p>
+    <p class="footer_text"> © 2022 Havryliuk Aleksandr </p>
 </footer>
 </html>

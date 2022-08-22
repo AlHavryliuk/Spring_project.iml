@@ -13,28 +13,22 @@
     <title>Add Student info:</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/myStyle.css"/>
     <script>
-        function empty_form () {
-            var txt = document.getElementById('msg').value;
-            for (var i = 0; i < form.elements.length; i++)
-                if (txt == '') {
-                    alert('Вы забыли ввести текст.');
-                    return false;
-                }
-        }
+
     </script>
 </head>
 <body>
 <div class="custom_addTable">
     <h1 id="form_marg">Add student info:</h1>
-    <form:form action="/spring/students/saveStudent" method="POST">
+    <form:form name="userform" action="/spring/students/saveStudent"  method="POST">
+
         <table id="table_add">
             <tr>
                 <td>Enter name</td>
-                <td><form:input  path="name"/></td>
+                <td><form:input path="name"/></td>
             </tr>
             <tr>
                 <td>Enter age</td>
-                <td><form:input path="age"/></td>
+                <td><form:input path="age" maxlength="2"/></td>
             </tr>
             <tr>
                 <td>Enter group</td>
@@ -42,7 +36,7 @@
             </tr>
             <tr class="non">
                 <td></td>
-                <td><input class="custom_input" type="submit" value="Save student" /></td>
+                <td><input class="custom_input" type="submit" value="Save student"/></td>
             </tr>
         </table>
     </form:form>
@@ -50,8 +44,7 @@
 </div>
 </body>
 <footer style="background-color: lavender;">
-    <p></p>
-    <p> NetCracker Project </p>
-    <p> © 2022 Havryliuk Aleksandr </p>
+    <p class="footer_text"> NetCracker Project </p>
+    <p class="footer_text"> © 2022 Havryliuk Aleksandr </p>
 </footer>
 </html>

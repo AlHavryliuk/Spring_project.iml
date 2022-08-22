@@ -7,9 +7,25 @@ body {
     background-color: aliceblue;
     text-align: center;
 }
+.applicationMenu {
+    font-size: 20px;
+    position: relative;
+    transition-property: font-size;
+    transition-duration: 50ms;
+    transition-delay: 50ms;
+}
+.applicationMenu:hover {
+    color: black;
+    transition-property: font-size;
+    transition-duration: 50ms;
+    transition-delay: 50ms;
+    font-size: 23px;
+}
+.footer_text {
+    font-size: 15px
+}
 
-
-table { 
+table {
     margin: auto;
     border-collapse: separate;
     box-sizing: border-box;
@@ -166,6 +182,66 @@ footer {
 
 .non:hover td {
     background: none!important;
+}
+.errorHead {
+    width: 90%;
+    height: 15%;
+    margin: 0;
+    padding-left: 100px;
+    padding-top: 50px;
+    font-size: 50px;
+    text-align: left;
+}
+.errorBodyInfo {
+    width: 100%;
+    height: 85%;
+    float: left;
+    margin: auto;
+}
+
+.errorTextMain {
+    font-size: 35px;
+}
+.errorBodyMain {
+    width: 950px;
+    height: 200px;
+    margin: 80px auto;
+    padding-top: 20px;
+}
+.errorBodyMain1{
+    width: 100%;
+    height: 30%;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 120px;
+    color: #c51212;
+}
+.errorBodyMain2 {
+    width: 100%;
+    height: 30%;
+    font-size: 32px;
+}
+.errorBodyMain3 {
+    width: 100%;
+    height: 30%;
+}
+.errorBodyMain4 {
+    float: left;
+    height: 100%;
+    width: 50%;
+    margin-top: 15px;
+}
+.errorInput {
+    border-radius: 25px;
+    font-size: 30px;
+    color: mediumslateblue;
+    background-color: aliceblue;
+    border: 0;
+    text-decoration: underline;
+}
+.errorInput:hover{
+    color: black;
+    cursor: pointer;
 }
 
 

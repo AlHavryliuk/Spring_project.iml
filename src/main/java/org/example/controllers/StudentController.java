@@ -4,6 +4,8 @@ package org.example.controllers;
 import org.example.dao.StudentsDAO;
 import org.example.entities.Student;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,13 +22,18 @@ public class StudentController {
         this.studentsDAO = studentsDAO;
     }
 
+
+
     @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
     public ModelAndView addStudent () {
         return new ModelAndView("addStudent","command", new Student ());
     }
 
     @RequestMapping(value = "/saveStudent", method = RequestMethod.POST)
-    public ModelAndView saveStudent (@ModelAttribute Student student) {
+    public ModelAndView saveStudent (@ModelAttribute Student student, BindingResult bindingResult) {
+        if (bindingResult.hasErrors() | student.getName().isEmpty() | student.getGroup().isEmpty()) {
+            return new ModelAndView("redirect:/error/errorPage");
+        }
         studentsDAO.insertStudent(student);
         studentList = studentsDAO.getAllStudents();
         return new ModelAndView("redirect:/students/viewAllStudents");
@@ -45,8 +52,12 @@ public class StudentController {
 
 
     @RequestMapping(value = "/saveEditStudent", method = RequestMethod.POST)
-    public ModelAndView saveEditStudent (@ModelAttribute Student student) {
+    public ModelAndView saveEditStudent (@ModelAttribute Student student, BindingResult bindingResult) {
+        if (bindingResult.hasErrors() | student.getName().isEmpty() | student.getGroup().isEmpty()) {
+            return new ModelAndView("redirect:/error/errorPage");
+        }
         for (Student value : studentList) {
+
             if (value.getId() == student.getId()) {
                 value.setAge(student.getAge());
                 value.setName(student.getName());
