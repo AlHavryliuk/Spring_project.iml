@@ -5,10 +5,7 @@ import org.example.dao.TeacherDAO;
 import org.example.entities.Teacher;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -18,20 +15,24 @@ import java.util.List;
 public class TeacherController {
 
     private final TeacherDAO teacherDAO;
-    private List <Teacher> teacherList;
+    private List<Teacher> teacherList;
 
     public TeacherController(TeacherDAO teacherDAO) {
         this.teacherDAO = teacherDAO;
     }
 
 
-    @RequestMapping(value = "/addTeacher", method = RequestMethod.GET)
-    public ModelAndView addTeacher () {
-        return new ModelAndView("addTeacher","command", new Teacher ());
-    }
+//    @RequestMapping(value = "/addTeacher", method = RequestMethod.GET)
+//    public ModelAndView addTeacher() {
+//        return new ModelAndView("addTeacher", "command", new Teacher());
+//    }
 
+    @GetMapping("/addTeacher")
+    public String addTeacher () {
+        return "addTeacher";
+    }
     @RequestMapping(value = "/saveTeacher", method = RequestMethod.POST)
-    public ModelAndView saveTeacher (@ModelAttribute Teacher teacher, BindingResult bindingResult) {
+    public ModelAndView saveTeacher(@ModelAttribute Teacher teacher, BindingResult bindingResult) {
         if (bindingResult.hasErrors() | teacher.getSubject().isEmpty() | teacher.getGrade().isEmpty()
                 | teacher.getName().isEmpty()) {
             return new ModelAndView("redirect:/error/errorPage");
@@ -42,21 +43,23 @@ public class TeacherController {
     }
 
     @RequestMapping(value = "/viewAllTeachers", method = RequestMethod.GET)
-    public ModelAndView viewAllTeachers () {
+    public ModelAndView viewAllTeachers() {
         teacherList = (teacherList != null) ? teacherList : getAllTeacher();
-        return new ModelAndView("viewAllTeachers","listOfTeachers", teacherList);
+        return new ModelAndView("viewAllTeachers", "listOfTeachers", teacherList);
     }
+
     @RequestMapping(value = "/editTeacher/{id}", method = RequestMethod.GET)
-    public ModelAndView editTeacher (@ModelAttribute Teacher teacher, @PathVariable("id") int id) {
+    public ModelAndView editTeacher(@ModelAttribute Teacher teacher, @PathVariable("id") int id) {
         for (int i = 0; i < teacherList.size(); i++) {
             if (teacherList.get(i).getId() == id) {
                 teacher = teacherList.get(i);
             }
         }
-        return new ModelAndView("editTeacher","command", new Teacher (teacher.getId(),teacher.getName(),teacher.getSubject(), teacher.getGrade()));
+        return new ModelAndView("editTeacher", "command", new Teacher(teacher.getId(), teacher.getName(), teacher.getSubject(), teacher.getGrade()));
     }
+
     @RequestMapping(value = "/saveEditTeacher", method = RequestMethod.POST)
-    public ModelAndView saveEditTeacher (@ModelAttribute Teacher teacher, BindingResult bindingResult) {
+    public ModelAndView saveEditTeacher(@ModelAttribute Teacher teacher, BindingResult bindingResult) {
         if (bindingResult.hasErrors() | teacher.getSubject().isEmpty() | teacher.getGrade().isEmpty()
                 | teacher.getName().isEmpty()) {
             return new ModelAndView("redirect:/error/errorPage");
@@ -66,7 +69,7 @@ public class TeacherController {
                 teacherList.get(i).setName(teacher.getName());
                 teacherList.get(i).setSubject(teacher.getSubject());
                 teacherList.get(i).setGrade(teacher.getGrade());
-                teacherDAO.updateTeacherByAll(teacher.getId(),teacher.getName(),teacher.getSubject(),teacher.getGrade());
+                teacherDAO.updateTeacherByAll(teacher.getId(), teacher.getName(), teacher.getSubject(), teacher.getGrade());
             }
         }
         return new ModelAndView("redirect:/teachers/viewAllTeachers");
@@ -74,7 +77,7 @@ public class TeacherController {
 
 
     @RequestMapping(value = "/removeTeacher/{id}", method = RequestMethod.GET)
-    public ModelAndView removeTeacher (@PathVariable int id) {
+    public ModelAndView removeTeacher(@PathVariable int id) {
         for (int i = 0; i < teacherList.size(); i++) {
             if (teacherList.get(i).getId() == id) {
                 teacherDAO.removeTeacher(teacherList.get(i).getId());
