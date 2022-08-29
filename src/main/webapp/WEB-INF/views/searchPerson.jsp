@@ -9,29 +9,19 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <title>Search info:</title>
-    <script>
-
-        /*function checkEmpty () {
-            var name = document.form.name;
-            if (name == "") {
-                alert("Name is empty!")
-            } else {
-                return true
-            }
-        }*/
-    </script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/myStyle.css"/>
 </head>
 <body>
-<div class="text_form_search">Search information about Student</div><hr>
+<div class="text_form_search">Search information about Student</div>
+<hr>
 <div class="form_search_main">
     <div class="form_search_one">
         <div class="form_two">
             <div class="form_search_left">
-                <form:form action="/spring/search/saveSearchPersonId" method="POST">
+                <form:form action="/spring/students/searchPersonId" method="POST">
                     <b><i>ID</i></b> : <label>
                     <input type="text" value="" name="id" placeholder="Enter Search Id"/>
                 </label>
@@ -39,7 +29,7 @@
                 </form:form>
             </div>
             <div class="form_search_left">
-                <form:form action="/spring/search/saveSearchPersonName" method="POST">
+                <form:form action="/spring/students/searchPersonName" method="POST">
                     <b><i>Name</i></b> : <label>
                     <input type="text" value="" name="username" placeholder="Enter Search Name"/>
                 </label>
@@ -47,9 +37,9 @@
                 </form:form>
             </div>
         </div>
-        <div >
+        <div>
             <div class="form_search_right">
-                <form:form action="/spring/search/saveSearchPersonAge" method="POST">
+                <form:form action="/spring/students/searchPersonAge" method="POST">
                     <b><i>Age</i></b> : <label>
                     <input type="text" value="" name="age" placeholder="Enter Search Age"/>
                 </label>
@@ -57,7 +47,7 @@
                 </form:form>
             </div>
             <div class="form_search_right">
-                <form:form action="/spring/search/saveSearchPersonGroup" method="POST">
+                <form:form action="/spring/students/searchPersonGroup" method="POST">
                     <b><i>Group</i></b> : <label>
                     <input type="text" value="" name="group" placeholder="Enter Search Group"/>
                 </label>
@@ -66,7 +56,8 @@
             </div>
         </div>
     </div>
-</div> <hr>
+</div>
+<hr>
 <div style="width: 100%">
     <table id="person_table" border="1" cellpadding="10" cellspacing="10">
         <tr>
@@ -75,7 +66,7 @@
             <th>Age</th>
             <th>Group</th>
         </tr>
-        <c:forEach var="student" items="${searchList}">
+        <c:forEach var="student" items="${listOfStudents}">
             <tr>
                 <td>${student.id}</td>
                 <td>${student.name}</td>

@@ -1,3 +1,5 @@
+@import "/img";
+
 body {
     height: 87%;
     font-family: Georgia, serif;
@@ -135,6 +137,7 @@ footer {
     width: 750px;
     font-size: 17px;
     text-align: center;
+
 }
 
 #myInput {
@@ -146,7 +149,17 @@ footer {
 }
 .main_button {
     font-size: 16px;
+    position: relative;
+    transition-property: font-size;
+    transition-duration: 50ms;
+    transition-delay: 50ms;
+}
+.main_button:hover {
     color: black;
+    transition-property: font-size;
+    transition-duration: 50ms;
+    transition-delay: 50ms;
+    font-size: 18px;
 }
 .custom_addTable {
     width: 500px;
@@ -167,6 +180,7 @@ footer {
 .custom_back {
     margin-bottom: 15px;
     margin-top: -10px;
+
 }
 .custom_input {
     width: 252px;
@@ -183,63 +197,81 @@ footer {
 .non:hover td {
     background: none!important;
 }
+.error_main {
+    width: 1720px;
+    height: 700px;
+}
 .errorHead {
-    width: 90%;
+    width: 95%;
     height: 15%;
     margin: 0;
-    padding-left: 100px;
-    padding-top: 50px;
-    font-size: 50px;
+    padding-left: 75px;
+    padding-top: 25px;
+    font-size: 55px;
     text-align: left;
-}
-.errorBodyInfo {
-    width: 100%;
-    height: 85%;
-    float: left;
-    margin: auto;
 }
 
-.errorTextMain {
-    font-size: 35px;
+.error_body {
+    height: 90%;
+    width: 80%;
+    margin: auto;
+    display: flex;
 }
-.errorBodyMain {
-    width: 950px;
-    height: 200px;
-    margin: 80px auto;
-    padding-top: 20px;
-}
-.errorBodyMain1{
-    width: 100%;
-    height: 30%;
-    font-size: 40px;
-    text-align: left;
-    margin-left: 120px;
-    color: #c51212;
-}
-.errorBodyMain2 {
-    width: 100%;
-    height: 30%;
-    font-size: 32px;
-}
-.errorBodyMain3 {
-    width: 100%;
-    height: 30%;
-}
-.errorBodyMain4 {
-    float: left;
+.erBody_text {
     height: 100%;
-    width: 50%;
-    margin-top: 15px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+.Oops {
+
+    font-size: 45px;
+    line-height: 60px;
+}
+.ErrorMainText {
+    font-size: 35px;
+    line-height: 40px;
+}
+.errorButton {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    wrap-option: wrap;
+}
+.erBody_img {
+    height: 100%;
+    width: 60%;
 }
 .errorInput {
+    height: 50%;
+    width: 25%;
     border-radius: 25px;
+    margin-top: 10px;
     font-size: 30px;
     color: mediumslateblue;
     background-color: aliceblue;
     border: 0;
     text-decoration: underline;
 }
+.errorInput1 {
+    height: 50%;
+    width: 75%;
+    border-radius: 25px;
+    padding-top: 25px;
+    font-size: 30px;
+    color: mediumslateblue;
+    border: 0;
+    text-decoration: underline;
+}
 .errorInput:hover{
+    color: black;
+    cursor: pointer;
+}
+.errorInput1:hover{
     color: black;
     cursor: pointer;
 }

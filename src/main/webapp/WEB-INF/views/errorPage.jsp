@@ -20,17 +20,18 @@
 </head>
 <body>
 <div>
-    <div class="errorHead" style="font-size: 64px;">400 Bad Request...</div>
-    <div class="errorBodyInfo">
-        <div class="errorBodyMain">
-            <div class="errorBodyMain1">Oops...</div>
-            <div class="errorBodyMain2"> Something went wrong. Please, enter the correct details </div>
-            <div class="errorBodyMain3">
-                <div class="errorBodyMain4">
-                    <input class="errorInput" type="button" value="Try again" onclick="Previous()"></div>
-                <div class="errorBodyMain4">
-                    <a class="errorInput" href="/spring/">Go to Application menu </a></div>
+    <div class="error_main">
+        <div class="errorHead">400 Bad Request...</div>
+        <div class="error_body">
+            <div class="erBody_text">
+                <a class="Oops">Oops!!!</a>
+                <a class="ErrorMainText">Something went wrong. <br> Please, enter the correct details</a>
+                <div class="errorButton">
+                    <input class="errorInput" type="button" value="Try again" onclick="Previous()">
+                    <a class="errorInput1" href="/spring/">Go to Application menu </a>
                 </div>
+            </div>
+            <div class="erBody_img"><img src="${pageContext.request.contextPath}/img/oops.png"></div>
         </div>
     </div>
 </div>

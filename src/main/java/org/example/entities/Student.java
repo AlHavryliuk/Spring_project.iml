@@ -2,6 +2,7 @@ package org.example.entities;
 
 import java.util.Objects;
 
+
 public class Student {
     private int id;
     private String name;

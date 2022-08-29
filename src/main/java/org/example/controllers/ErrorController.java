@@ -11,8 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ErrorController {
 
     @RequestMapping(value = "/errorPage", method = RequestMethod.GET)
-    public ModelAndView errorPage () {
+    public ModelAndView errorPage() {
 
         return new ModelAndView("errorPage");
+
     }
 }

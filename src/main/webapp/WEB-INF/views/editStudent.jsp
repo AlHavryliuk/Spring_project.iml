@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td>Enter name</td>
-                <td><form:input path="name" /></td>
+                <td><form:input path="name"/></td>
             </tr>
             <tr>
                 <td>Enter age</td>
