@@ -9,6 +9,7 @@ body {
     background-color: aliceblue;
     text-align: center;
 }
+
 .applicationMenu {
     font-size: 20px;
     position: relative;
@@ -16,6 +17,7 @@ body {
     transition-duration: 50ms;
     transition-delay: 50ms;
 }
+
 .applicationMenu:hover {
     color: black;
     transition-property: font-size;
@@ -23,6 +25,7 @@ body {
     transition-delay: 50ms;
     font-size: 23px;
 }
+
 .footer_text {
     font-size: 15px
 }
@@ -43,6 +46,7 @@ table {
     border-color: grey;
     font-variant: normal;
 }
+
 th {
     font-weight: normal;
     color: #039;
@@ -54,6 +58,7 @@ td {
     border-top: 1px solid #e8edff;
     padding: 10px 15px;
 }
+
 tr:hover td {
     background: #e8edff;
 }
@@ -68,9 +73,11 @@ footer {
     height: 10%;
     width: 100%;
 }
+
 #input1 {
     width: 295%;
 }
+
 #table_add {
 
     margin: auto;
@@ -88,19 +95,23 @@ footer {
     border-color: grey;
     font-variant: normal;
 }
+
 #form_marg {
     margin-left: 15px;
     margin-top: 3%;
     font-size: 25px;
 }
+
 .form_search_left {
     width: 100%;
     text-align: right;
 }
+
 .text_form_search {
-   font-size: 30px;
+    font-size: 30px;
     margin-top: 2%
 }
+
 .form_search_main {
     display: flex;
     width: 800px;
@@ -108,6 +119,7 @@ footer {
     padding-left: 5%;
 
 }
+
 .form_search_one {
 
     width: 100%;
@@ -117,22 +129,27 @@ footer {
     position: center;
 
 }
+
 .form_two {
     width: 50%;
 }
+
 .form_search_left {
     width: 100%;
     text-align: right;
 }
+
 .form_search_right {
     margin-left: 15px;
     width: 100%;
     text-align: right;
 }
+
 .arrow_righ {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
+
 #person_table {
     width: 750px;
     font-size: 17px;
@@ -147,6 +164,7 @@ footer {
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
 }
+
 .main_button {
     font-size: 16px;
     position: relative;
@@ -154,6 +172,7 @@ footer {
     transition-duration: 50ms;
     transition-delay: 50ms;
 }
+
 .main_button:hover {
     color: black;
     transition-property: font-size;
@@ -161,14 +180,16 @@ footer {
     transition-delay: 50ms;
     font-size: 18px;
 }
+
 .custom_addTable {
     width: 500px;
     margin: 50px auto;
     padding-top: 2px;
     padding-bottom: 2px;
-    background: none 0 0 / auto repeat scroll padding-box border-box rgb(222,230,250);
+    background: none 0 0 / auto repeat scroll padding-box border-box rgb(222, 230, 250);
     border-radius: 25px;
 }
+
 .custom_editTable {
     width: 500px;
     margin: 50px auto;
@@ -177,11 +198,13 @@ footer {
     background: none 0 0 / auto repeat scroll padding-box border-box rgb(250, 162, 162);
     border-radius: 25px;
 }
+
 .custom_back {
     margin-bottom: 15px;
     margin-top: -10px;
 
 }
+
 .custom_input {
     width: 252px;
     margin-left: -92px;
@@ -190,91 +213,129 @@ footer {
     color: black;
     border: 2px solid cadetblue;
 }
+
 .custom_input:hover {
     background-color: lavender;
 }
 
 .non:hover td {
-    background: none!important;
+    background: none !important;
 }
+
 .error_main {
     width: 1720px;
     height: 700px;
 }
-.errorHead {
-    width: 95%;
-    height: 15%;
-    margin: 0;
-    padding-left: 75px;
-    padding-top: 25px;
-    font-size: 55px;
-    text-align: left;
+
+
+.er_Body {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.error_body {
-    height: 90%;
-    width: 80%;
-    margin: auto;
+.main_error_page {
+    height: 840px;
+    width: 1745px;
+    position: relative;
+}
+
+.header_error {
+
+    width: 100%;
+    height: 15%;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+}
+.error_text_container {
+
+}
+
+.body_error {
+    margin: 0 auto;
+    width: 87%;
+    height: 85%;
     display: flex;
 }
-.erBody_text {
+
+.img_error {
+    width: 50%;
     height: 100%;
-    width: 40%;
+}
+
+.error_text {
+    width: 50%;
+    height: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    text-align: center;
+
+}
+
+.error_text_container {
+    width: 100%;
+    height: 65%;
+    display: flex;
     flex-direction: column;
 }
-.Oops {
 
-    font-size: 45px;
-    line-height: 60px;
-}
-.ErrorMainText {
-    font-size: 35px;
-    line-height: 40px;
-}
-.errorButton {
+.oops_text_error {
+
+    height: 15%;
     width: 100%;
+    vertical-align: bottom;
+    font-size: 40px;
+    margin-top: 100px;
+    margin-left: 40px;
+
+}
+
+
+.body_text_error {
     height: 20%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    wrap-option: wrap;
+    width: 100%;
+    font-size: 32px ;
+    margin-left: 40px;
 }
-.erBody_img {
+
+
+.button_error {
+
+    height: 20%;
+    width: 100%;
+    font-size: 28px;
+}
+
+.er_button_1 {
+    width: 42%;
     height: 100%;
-    width: 60%;
-}
-.errorInput {
-    height: 50%;
-    width: 25%;
-    border-radius: 25px;
-    margin-top: 10px;
-    font-size: 30px;
-    color: mediumslateblue;
+    float: left;
+    font-size: 28px;
+    color: #003399;
+    text-decoration: underline;
     background-color: aliceblue;
-    border: 0;
-    text-decoration: underline;
+    border: none;
+    text-align: right;
 }
-.errorInput1 {
-    height: 50%;
-    width: 75%;
-    border-radius: 25px;
-    padding-top: 25px;
-    font-size: 30px;
-    color: mediumslateblue;
-    border: 0;
-    text-decoration: underline;
-}
-.errorInput:hover{
+.er_button_1:hover{
     color: black;
     cursor: pointer;
+
 }
-.errorInput1:hover{
+
+.er_button_2 {
+    width: 50%;
+    height: 100%;
+    margin-top: 29px;
+    float: left;
+}
+.button_error :hover {
     color: black;
-    cursor: pointer;
 }
+
 
 
 

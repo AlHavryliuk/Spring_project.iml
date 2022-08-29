@@ -18,20 +18,26 @@
     </script>
 
 </head>
-<body>
-<div>
-    <div class="error_main">
-        <div class="errorHead">400 Bad Request...</div>
-        <div class="error_body">
-            <div class="erBody_text">
-                <a class="Oops">Oops!!!</a>
-                <a class="ErrorMainText">Something went wrong. <br> Please, enter the correct details</a>
-                <div class="errorButton">
-                    <input class="errorInput" type="button" value="Try again" onclick="Previous()">
-                    <a class="errorInput1" href="/spring/">Go to Application menu </a>
+<body class="er_Body">
+<div class="main_error_page">
+    <div class="header_error">
+        <div class="header_error_text">400 Bad Request...</div>
+    </div>
+    <div class="body_error">
+        <div class="error_text">
+            <div class="error_text_container">
+                <div class="oops_text_error">Oops</div>
+                <div class="body_text_error">Something went wrong <br> Please, enter the correct derails.</div>
+                <div class="button_error">
+                    <input class="er_button_1" type="button" value="Try again" onclick="Previous()">
+                    <div class="er_button_2">
+                        <a href="/spring/">Go to Application menu </a>
+                    </div>
                 </div>
             </div>
-            <div class="erBody_img"><img src="${pageContext.request.contextPath}/img/oops.png"></div>
+        </div>
+        <div class="img_error">
+            <img src="${pageContext.request.contextPath}/img/oops.png">
         </div>
     </div>
 </div>
